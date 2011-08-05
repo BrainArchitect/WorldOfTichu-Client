@@ -1,4 +1,4 @@
-package patterns;
+package cards.patterns;
 import cards.*;
 
 import java.util.ArrayList;

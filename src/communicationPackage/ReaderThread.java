@@ -8,25 +8,42 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import patterns.CardPattern;
-import patterns.CardPatternFactory;
+import commands.Command;
+import commands.CommandFactory;
 
 import cards.Card;
+import cards.patterns.CardPattern;
+import cards.patterns.CardPatternFactory;
 
-public class ReaderThreadClient extends Thread {
+public class ReaderThread extends Thread {
 			
 	private BufferedReader in;
 
 	private Socket socket;
 			
-	public ReaderThreadClient(BufferedReader in, Socket socket){
+	public ReaderThread(BufferedReader in, Socket socket){
 		this.in = in;
 		this.socket = socket;
 
 	}
 	
 	
-	public void run() {
+	public void run(){
+		try{
+			while (true){
+				String input = in.readLine();
+				String[] params = input.split("~");
+				Command command = CommandFactory.createCommand(params[0]);
+				command.execute(params);
+			}
+		}catch (Exception e) {
+			//do nothing
+		}
+	}
+
+	
+	
+	public void run2() {
        try {
           while (true) {
         	  String msg = in.readLine();
