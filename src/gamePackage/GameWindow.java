@@ -11,10 +11,13 @@ import java.net.Socket;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Game extends JFrame implements ActionListener, WindowListener{
+import communicationPackage.ReaderThread;
+
+public class GameWindow extends JFrame implements ActionListener, WindowListener{
 
 	/**
 	 * 
@@ -27,14 +30,15 @@ public class Game extends JFrame implements ActionListener, WindowListener{
 	private BufferedReader in;
 	private PrintWriter out;
 	
-	public Game(){
+	public GameWindow(){
 		try{
 			socket = new Socket("localhost", 12345);
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			out = new PrintWriter(socket.getOutputStream());
 			new ReaderThread(in).start();
 		}catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(this, e.getMessage());
+			System.exit(0);
 		}
 		commandField = new JTextField(20);
 		commandField.addActionListener(this);
@@ -71,7 +75,9 @@ public class Game extends JFrame implements ActionListener, WindowListener{
 	@Override
 	public void windowClosing(WindowEvent e) {
 		try{
-			socket.close();
+			if (socket != null)
+				socket.close();
+			System.exit(0);
 		}catch (Exception e1) {
 			e1.printStackTrace();
 		}

@@ -1,6 +1,6 @@
 package main;
 
-import gamePackage.Game;
+import gamePackage.GameWindow;
 
 import javax.swing.UIManager;
 
@@ -11,7 +11,7 @@ public class Main {
 		// Install the system's look and feel;
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            new Game();
+            new GameWindow();
         } catch (Exception ex) {
             //DO NOTHING
         }
