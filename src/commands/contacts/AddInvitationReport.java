@@ -2,15 +2,15 @@ package commands.contacts;
 
 import commands.Command;
 
-public class BuddyChat extends Command{
 
-	
+public class AddInvitationReport extends Command{
+
 	/**
-	 * Implements 2f requirement
+	 * Impelements 2aR requirement
 	 */
 	@Override
 	public void execute(String... params) {
-				
+
 	}
 
 }

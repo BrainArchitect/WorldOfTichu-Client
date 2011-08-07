@@ -4,7 +4,7 @@ import commands.Command;
 
 
 
-public class RemoveContact extends Command{
+public class ContactRemoved extends Command{
 
 	/**
 	 * Implements 2b requirement

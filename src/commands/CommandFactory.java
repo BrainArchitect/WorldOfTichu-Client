@@ -1,24 +1,24 @@
 package commands;
 
-import commands.account.Login;
-import commands.contacts.AddInvitation;
-import commands.contacts.AddInvitationReply;
-import commands.contacts.BuddyChat;
-import commands.contacts.RemoveContact;
+import commands.account.LoginReport;
+import commands.contacts.AddInvitationReport;
+import commands.contacts.AddInvitationRequest;
+import commands.contacts.ChatMessageFromContact;
+import commands.contacts.ContactRemoved;
 
 public class CommandFactory {
 
 	public static Command createCommand(String commandStr){
 		if (commandStr.equals("1b"))
-			return new Login();
+			return new LoginReport();
 		if (commandStr.equals("2a"))
-			return new AddInvitation();
+			return new AddInvitationReport();
 		if (commandStr.equals("2a1"))
-			return new AddInvitationReply();
+			return new AddInvitationRequest();
 		if (commandStr.equals("2b"))
-			return new RemoveContact();
+			return new ContactRemoved();
 		if (commandStr.equals("2f"))
-			return new BuddyChat();
+			return new ChatMessageFromContact();
 		
 		return null;
 	}	

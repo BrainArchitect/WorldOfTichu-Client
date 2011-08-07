@@ -3,7 +3,7 @@ package commands.contacts;
 import commands.Command;
 
 
-public class AddInvitationReply extends Command{
+public class AddInvitationRequest extends Command{
 
 	/**
 	 * Implements 2a1 requirement
