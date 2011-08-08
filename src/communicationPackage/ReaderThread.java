@@ -28,8 +28,9 @@ public class ReaderThread extends Thread {
 			while (true){
 				String input = in.readLine();
 				String[] params = input.split("~");
-				Command command = CommandFactory.createCommand(params[0]);
-				command.execute(params);
+				JOptionPane.showMessageDialog(null,"Message Received: "+input);
+				//Command command = CommandFactory.createCommand(params[0]);
+				//command.execute(params);
 			}
 		}catch (Exception e) {
 			//do nothing
