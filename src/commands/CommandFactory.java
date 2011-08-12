@@ -9,7 +9,7 @@ import commands.contacts.ContactRemoved;
 public class CommandFactory {
 
 	public static Command createCommand(String commandStr){
-		if (commandStr.equals("1b"))
+		if (commandStr.equals("1bR"))
 			return new LoginReport();
 		if (commandStr.equals("2a"))
 			return new AddInvitationReport();

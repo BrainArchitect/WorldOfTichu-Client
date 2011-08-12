@@ -29,11 +29,12 @@ public class ReaderThread extends Thread {
 				String input = in.readLine();
 				String[] params = input.split("~");
 				JOptionPane.showMessageDialog(null,"Message Received: "+input);
-				//Command command = CommandFactory.createCommand(params[0]);
-				//command.execute(params);
+				Command command = CommandFactory.createCommand(params[0]);
+				command.execute(params);
 			}
 		}catch (Exception e) {
-			//do nothing
+			JOptionPane.showMessageDialog(null,"error");
+			e.printStackTrace();
 		}
 	}
 }

@@ -1,5 +1,9 @@
 package commands.account;
 
+import gui.FrameWithFlash;
+
+import com.jpackages.jflashplayer.FlashPanel;
+
 import commands.Command;
 
 
@@ -19,6 +23,6 @@ public class LoginReport extends Command{
 	 */
 	@Override
 	public void execute(String... params) {
-
+		FrameWithFlash.callMethod("helloFromJava", params);
 	}
 }
