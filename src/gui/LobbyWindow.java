@@ -1,4 +1,5 @@
 package gui;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
@@ -17,11 +18,11 @@ import com.jpackages.jflashplayer.JFlashInvalidFlashException;
 import com.jpackages.jflashplayer.JFlashLibraryLoadFailedException;
 
 
-public class FrameWithFlash extends JFrame {
+public class LobbyWindow extends JFrame {
 
 	private static FlashPanel flashPanel;
 
-	public FrameWithFlash(){
+	public LobbyWindow(){
 		FlashPanel.setRegistrationKey("123456");
 		this.initProperties();
 		this.createFlashPanel();
@@ -31,7 +32,7 @@ public class FrameWithFlash extends JFrame {
 	
 	private void initProperties(){
 		this.setTitle("Testing Flash with JFlashPlayer");
-		this.setSize(1200, 675);
+		this.setSize(1600, 1200);
 		this.setUndecorated(true);
 		this.getContentPane().setLayout(new BorderLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -72,7 +73,7 @@ public class FrameWithFlash extends JFrame {
 	private void createFlashPanel() {
 		String flashVersionRequired = "10";
 		try {
-			String flashFilePath = "LoginScreen.swf";
+			String flashFilePath = "LobbyWindow-(1600x1200).swf";
 			
 			FlashPanel.setRequiredFlashVersion(flashVersionRequired);
 			// construct a FlashPanel displaying the SWF flash animation file
@@ -100,7 +101,7 @@ public class FrameWithFlash extends JFrame {
 		if(msg.equals("Exit")){
 			Main.shutDown();
 			//this.close();
-			Thread.currentThread().interrupt();
+			///Thread.currentThread().interrupt();
 		}else if(msg.equals("Minimize")){
 			this.setExtendedState(JFrame.ICONIFIED);
 		}else{

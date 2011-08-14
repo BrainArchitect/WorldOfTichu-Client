@@ -5,10 +5,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import gamePackage.GameWindow;
-import gui.FrameWithFlash;
-import gui.LoginScreen;
 
+import gui.LoginWindow;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -19,7 +17,7 @@ public class Main {
 	private static Socket socket;
 	private static BufferedReader in;
 	private static PrintWriter out;
-	private static FrameWithFlash login;
+	private static LoginWindow login;
 	private static ReaderThread r;
 	
 	public Main(){
@@ -43,12 +41,16 @@ public class Main {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             new Main();
-			login = new FrameWithFlash();
+			login = new LoginWindow();
 
         } catch (Exception ex) {
             //DO NOTHING
         }
         
+	}
+	
+	public static LoginWindow getLoginWindow(){
+		return login;
 	}
 	
 	

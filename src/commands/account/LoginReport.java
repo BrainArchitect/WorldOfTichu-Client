@@ -1,6 +1,8 @@
 package commands.account;
 
-import gui.FrameWithFlash;
+import main.Main;
+import gui.LobbyWindow;
+import gui.LoginWindow;
 
 import com.jpackages.jflashplayer.FlashPanel;
 
@@ -23,6 +25,11 @@ public class LoginReport extends Command{
 	 */
 	@Override
 	public void execute(String... params) {
-		FrameWithFlash.callMethod("helloFromJava", params);
+		LoginWindow.callMethod("loginReport", params);
+		if(params[1]=="true"){
+			Main.getLoginWindow().close();
+			new LobbyWindow();
+		}
+		
 	}
 }
