@@ -18,9 +18,11 @@ import cards.patterns.CardPatternFactory;
 public class ReaderThread extends Thread {
 			
 	private BufferedReader in;
+
 			
 	public ReaderThread(BufferedReader in){
 		this.in = in;
+		this.setDaemon(true);
 	}
 	
 	public void run(){
@@ -37,4 +39,8 @@ public class ReaderThread extends Thread {
 			e.printStackTrace();
 		}
 	}
+	
+
+	
+
 }
