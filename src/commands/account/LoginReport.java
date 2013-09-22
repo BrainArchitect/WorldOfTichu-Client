@@ -1,10 +1,10 @@
 package commands.account;
 
 import main.Main;
+import main.MessageSenderForDebug;
 import gui.LobbyWindow;
 import gui.LoginWindow;
 
-import com.jpackages.jflashplayer.FlashPanel;
 
 import commands.Command;
 
@@ -26,9 +26,14 @@ public class LoginReport extends Command{
 	@Override
 	public void execute(String... params) {
 		LoginWindow.callMethod("loginReport", params);
-		if(params[1]=="true"){
+		if(params[1].equals("true")){
+			
+			Main.setUsername(params[2]);
 			Main.getLoginWindow().close();
-			new LobbyWindow();
+			Main.setLobbyWindow(new LobbyWindow());
+			LobbyWindow.callMethod("profileInfo", params);			
+			MessageSenderForDebug.create();
+			
 		}
 		
 	}

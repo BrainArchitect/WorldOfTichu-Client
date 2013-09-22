@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 
+import gui.LobbyWindow;
 import gui.LoginWindow;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -18,7 +19,9 @@ public class Main {
 	private static BufferedReader in;
 	private static PrintWriter out;
 	private static LoginWindow login;
+	private static LobbyWindow lobby;
 	private static ReaderThread r;
+	private static String username;
 	
 	public Main(){
 		try{
@@ -53,8 +56,24 @@ public class Main {
 		return login;
 	}
 	
+	public static void setLobbyWindow(LobbyWindow lobbyWindow){
+		lobby = lobbyWindow;
+	}
+	
+	public static LobbyWindow getLobbyWindow(){
+		return lobby;
+	}
 	
 	
+	
+	public static String getUsername() {
+		return username;
+	}
+
+	public static void setUsername(String username) {
+		Main.username = username;
+	}
+
 	public static void shutDown(){
 		
 		ThreadGroup rootGroup = Thread.currentThread( ).getThreadGroup( );

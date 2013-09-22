@@ -1,5 +1,6 @@
 package commands.contacts;
 
+import gui.LobbyWindow;
 import commands.Command;
 
 
@@ -10,14 +11,7 @@ public class AddInvitationRequest extends Command{
 	 */
 	@Override
 	public void execute(String... params) {
-		try{
-
-			//code in here
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-
+		LobbyWindow.callMethod("addInvitationRequest", params);
 	}
-
+	
 }

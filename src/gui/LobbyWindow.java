@@ -32,7 +32,7 @@ public class LobbyWindow extends JFrame {
 	
 	private void initProperties(){
 		this.setTitle("Testing Flash with JFlashPlayer");
-		this.setSize(1600, 1200);
+		this.setSize(1200, 900);
 		this.setUndecorated(true);
 		this.getContentPane().setLayout(new BorderLayout());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -73,7 +73,7 @@ public class LobbyWindow extends JFrame {
 	private void createFlashPanel() {
 		String flashVersionRequired = "10";
 		try {
-			String flashFilePath = "LobbyWindow-(1600x1200).swf";
+			String flashFilePath = "LobbyWindow4_3.swf";
 			
 			FlashPanel.setRequiredFlashVersion(flashVersionRequired);
 			// construct a FlashPanel displaying the SWF flash animation file
